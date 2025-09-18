@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { isAfter, isBefore } from 'date-fns';
 import { useAuth } from '../../context/AuthContext';
 import { useLocation } from 'react-router-dom';
+import { CheckCircle } from 'lucide-react';
 
 type Playlist = {
     id: string;
@@ -304,6 +305,26 @@ export default function CalendarioAvancado() {
                     </table>
                 )}
             </section>
+
+            {/* Como utilizar Agendamentos */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
+                    <div>
+                        <h3 className="text-blue-900 font-medium mb-2">📅 Como agendar transmissões</h3>
+                        <ul className="text-blue-800 text-sm space-y-1">
+                            <li>• <strong>Criar Agendamento:</strong> Clique em "Novo Agendamento" ou em uma data no calendário</li>
+                            <li>• <strong>Escolher Playlist:</strong> Selecione qual playlist será transmitida</li>
+                            <li>• <strong>Definir Horário:</strong> Configure data e hora de início</li>
+                            <li>• <strong>Frequência:</strong> Escolha se é única, diária ou em dias específicos</li>
+                            <li>• <strong>Misturar Vídeos:</strong> Opção para embaralhar a ordem dos vídeos</li>
+                            <li>• <strong>Playlist de Finalização:</strong> Opcional para tocar após o agendamento</li>
+                            <li>• <strong>Visualizar no Calendário:</strong> Veja todos os agendamentos organizados</li>
+                            <li>• <strong>Filtros:</strong> Use os filtros para encontrar agendamentos específicos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             {/* MODAL */}
             <Modal isOpen={modalData !== null} onClose={() => setModalData(null)}>
