@@ -445,14 +445,16 @@ const MigrarVideosFTP: React.FC = () => {
         <div className="flex items-start">
           <AlertCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
           <div>
-            <h3 className="text-blue-900 font-medium mb-2">Como usar esta ferramenta</h3>
+            <h3 className="text-blue-900 font-medium mb-2">📂 Como migrar vídeos via FTP</h3>
             <ul className="text-blue-800 text-sm space-y-1">
               <li>• Preencha os dados de conexão FTP do servidor remoto</li>
               <li>• Conecte-se e navegue pelos diretórios para encontrar os vídeos</li>
-              <li>• <strong>NOVO:</strong> Clique no ícone de pasta para escanear recursivamente e encontrar todos os vídeos</li>
+              <li>• <strong>Escanear Pastas:</strong> Clique no ícone de pasta para encontrar todos os vídeos</li>
               <li>• Selecione os arquivos de vídeo que deseja migrar</li>
               <li>• Escolha a pasta de destino no seu sistema</li>
               <li>• Inicie a migração e acompanhe o progresso</li>
+              <li>• <strong>Formatos Aceitos:</strong> MP4, AVI, MOV, WMV, FLV, WebM, MKV</li>
+              <li>• <strong>Conversão Automática:</strong> Vídeos são otimizados após a migração</li>
             </ul>
           </div>
         </div>

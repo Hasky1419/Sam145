@@ -540,84 +540,22 @@ const RelayRTMP: React.FC = () => {
         </div>
       </div>
 
-      {/* Informações técnicas */}
-      <div className="bg-white rounded-lg shadow-sm p-6">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Informações Técnicas</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Como utilizar o Relay */}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="flex items-start">
+          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
           <div>
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Seu Stream de Saída</h3>
-            <div className="bg-gray-100 p-3 rounded-md">
-              <p className="font-mono text-sm">
-                rtmp://stmv1.udicast.com:1935/samhost/{user?.email?.split('@')[0] || 'usuario'}_relay
-              </p>
-            </div>
-            <p className="text-xs text-gray-500 mt-1">
-              Este é o endereço que seus espectadores usarão para assistir
-            </p>
+            <h3 className="text-blue-900 font-medium mb-2">🔄 Como usar o Relay RTMP</h3>
+            <ul className="text-blue-800 text-sm space-y-1">
+              <li>• <strong>URL de Origem:</strong> Cole a URL RTMP ou M3U8 que você quer retransmitir</li>
+              <li>• <strong>Validação:</strong> O sistema verifica se a URL está online</li>
+              <li>• <strong>Ativar Relay:</strong> Clique em "Ativar Relay" para começar</li>
+              <li>• <strong>Funcionamento 24/7:</strong> O relay fica ativo até você desativar</li>
+              <li>• <strong>Monitoramento:</strong> Acompanhe espectadores e tempo ativo</li>
+              <li>• <strong>Reconexão Automática:</strong> Se a origem cair, tenta reconectar</li>
+              <li>• <strong>Desativar:</strong> Use "Desativar Relay" quando não precisar mais</li>
+            </ul>
           </div>
-
-          <div>
-            <h3 className="text-sm font-medium text-gray-500 mb-2">URL de Visualização (HLS)</h3>
-            <div className="bg-gray-100 p-3 rounded-md">
-              <p className="font-mono text-sm">
-                http://stmv1.udicast.com:1935/samhost/{user?.email?.split('@')[0] || 'usuario'}_relay/playlist.m3u8
-              </p>
-            </div>
-            <p className="text-xs text-gray-500 mt-1">
-              URL para players que suportam HLS
-            </p>
-          </div>
-          
-          <div>
-            <h3 className="text-sm font-medium text-gray-500 mb-2">URL DASH</h3>
-            <div className="bg-gray-100 p-3 rounded-md">
-              <p className="font-mono text-sm">
-                http://stmv1.udicast.com:1935/samhost/{user?.email?.split('@')[0] || 'usuario'}_relay/manifest.mpd
-              </p>
-            </div>
-            <p className="text-xs text-gray-500 mt-1">
-              URL para players que suportam MPEG-DASH
-            </p>
-          </div>
-          
-          <div>
-            <h3 className="text-sm font-medium text-gray-500 mb-2">URL RTSP</h3>
-            <div className="bg-gray-100 p-3 rounded-md">
-              <p className="font-mono text-sm">
-                rtsp://stmv1.udicast.com:554/samhost/{user?.email?.split('@')[0] || 'usuario'}_relay
-              </p>
-            </div>
-            <p className="text-xs text-gray-500 mt-1">
-              URL para players como VLC
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-md">
-          <h4 className="text-sm font-medium text-yellow-800 mb-2">⚠️ Importante</h4>
-          <ul className="text-yellow-700 text-sm space-y-1">
-            <li>• O relay funciona 24/7 enquanto estiver ativo</li>
-            <li>• Certifique-se de que a URL de origem está sempre online</li>
-            <li>• O sistema monitora automaticamente a conexão</li>
-            <li>• Em caso de falha, o relay será automaticamente desativado</li>
-            <li>• Apenas um relay pode estar ativo por vez</li>
-            <li>• <strong>FFmpeg</strong> é usado para capturar e retransmitir o stream</li>
-            <li>• Suporte a reconexão automática em caso de queda temporária</li>
-           <li>• <strong>Portas do Wowza:</strong> 1935 (RTMP), 80 (HLS/HTTP), 443 (HTTPS), 554 (RTSP)</li>
-           <li>• <strong>Formatos suportados:</strong> HLS (.m3u8), DASH (.mpd), RTSP</li>
-          </ul>
-        </div>
-
-        <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-md">
-          <h4 className="text-green-900 font-medium mb-2">✅ Recursos Implementados</h4>
-          <ul className="text-green-800 text-sm space-y-1">
-            <li>• <strong>Validação em tempo real:</strong> Verifica se URL está online antes de ativar</li>
-            <li>• <strong>Reconexão automática:</strong> Tenta reconectar automaticamente em caso de falha</li>
-            <li>• <strong>Monitoramento de processo:</strong> Detecta se FFmpeg parou inesperadamente</li>
-            <li>• <strong>Logs detalhados:</strong> Acompanhe o status e erros em tempo real</li>
-            <li>• <strong>Cleanup automático:</strong> Remove processos órfãos na reinicialização</li>
-          </ul>
         </div>
       </div>
     </div>

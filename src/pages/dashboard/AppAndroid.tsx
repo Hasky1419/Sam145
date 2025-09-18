@@ -804,38 +804,23 @@ const AppAndroid: React.FC = () => {
                       accept="image/png"
                       onChange={(e) => setLogoFile(e.target.files?.[0] || null)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
-                    />
-                    <p className="text-xs text-gray-500 mt-1">PNG / 300x300 pixels</p>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Novo Background
-                    </label>
-                    <input
-                      type="file"
-                      accept="image/jpeg,image/jpg"
-                      onChange={(e) => setFundoFile(e.target.files?.[0] || null)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
-                    />
-                    <p className="text-xs text-gray-500 mt-1">JPG / 640x1136 pixels</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Botão de Configurar */}
-              <div className="flex justify-center">
-                <button
-                  onClick={handleConfigureApp}
-                  disabled={loading}
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center text-lg font-medium"
-                >
-                  <Settings className="h-6 w-6 mr-3" />
-                  {loading ? 'Atualizando...' : 'Atualizar Configurações'}
-                </button>
-              </div>
-            </div>
-          )}
+      {/* Como utilizar o App Android */}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="flex items-start">
+          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
+          <div>
+            <h3 className="text-blue-900 font-medium mb-2">📱 Como criar seu App Android</h3>
+            <ul className="text-blue-800 text-sm space-y-1">
+              <li>• <strong>Preencher Dados:</strong> Nome da TV, redes sociais e descrição</li>
+              <li>• <strong>Escolher Versão:</strong> Selecione a versão do app</li>
+              <li>• <strong>Personalizar:</strong> Envie logo (300x300), ícone (144x144) e fundo (640x1136)</li>
+              <li>• <strong>Criar App:</strong> Clique em "Criar App Android" e aguarde a compilação</li>
+              <li>• <strong>Download APK:</strong> Baixe o arquivo APK quando estiver pronto</li>
+              <li>• <strong>Publicar:</strong> Envie o APK para a Google Play Store</li>
+              <li>• <strong>Configurar:</strong> Use a aba "Configurar" para ajustar cores e links</li>
+              <li>• <strong>Atualizar:</strong> Modifique configurações sem criar novo app</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -1116,26 +1116,22 @@ const GerenciarVideos: React.FC = () => {
         </div>
       )}
 
-      {/* Informações de ajuda */}
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+      {/* Como utilizar */}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
         <div className="flex items-start">
-          <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5" />
+          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
           <div>
-            <h3 className="text-green-900 font-medium mb-2">🎯 Sistema de Visualização Otimizado</h3>
-            <ul className="text-green-800 text-sm space-y-1">
-              <li>• <strong>Player Externo via iFrame:</strong> Usa o player já configurado e funcionando</li>
-              <li>• <strong>Formato padrão:</strong> https://domain:1443/play.php?login=usuario&video=pasta/arquivo.mp4</li>
-              <li>• <strong>Análise automática:</strong> Bitrate, codec e resolução detectados automaticamente</li>
-              <li>• <strong>Carregamento otimizado:</strong> Dados carregados diretamente do banco</li>
-              <li>• <strong>Sincronização inteligente:</strong> Apenas quando necessário</li>
-              <li>• <strong>Sanitização automática:</strong> Nomes de pastas convertidos para minúsculas sem acentos</li>
-              <li>• <strong>Performance melhorada:</strong> Menos chamadas de API, carregamento mais rápido</li>
-              <li>• <strong>Gerenciamento de pastas:</strong> Criação, edição e exclusão sincronizada com servidor</li>
-              <li>• <strong>Player iFrame:</strong> Usa o sistema externo já configurado e testado</li>
-              <li>• <strong>Monitoramento de espaço:</strong> Controle em tempo real do uso de armazenamento</li>
-              <li>• <strong>Porta padrão:</strong> 1443 para todas as visualizações</li>
-              <li>• <strong>Sistema externo:</strong> Elimina problemas de compatibilidade e carregamento</li>
-              <li>• <strong>Fallback automático:</strong> Abre em nova aba em caso de erro</li>
+            <h3 className="text-blue-900 font-medium mb-2">📚 Como utilizar o Gerenciador de Vídeos</h3>
+            <ul className="text-blue-800 text-sm space-y-1">
+              <li>• <strong>Criar Pastas:</strong> Organize seus vídeos em pastas temáticas</li>
+              <li>• <strong>Upload de Vídeos:</strong> Arraste arquivos ou clique em "Upload Vídeos"</li>
+              <li>• <strong>Formatos Aceitos:</strong> MP4, AVI, MOV, WMV, FLV, WebM, MKV e outros</li>
+              <li>• <strong>Visualizar:</strong> Clique no botão "Play" para assistir seus vídeos</li>
+              <li>• <strong>Compartilhar:</strong> Use o botão "Abrir em nova aba" para compartilhar</li>
+              <li>• <strong>Organização:</strong> Renomeie pastas e organize seu conteúdo</li>
+              <li>• <strong>Sincronização:</strong> Use "Sincronizar" se vídeos não aparecerem</li>
+              <li>• <strong>Espaço:</strong> Monitore o uso do seu plano de armazenamento</li>
+              <li>• <strong>Qualidade:</strong> Vídeos são otimizados automaticamente para streaming</li>
             </ul>
           </div>
         </div>

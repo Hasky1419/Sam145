@@ -592,18 +592,23 @@ export default function BaixarYoutube() {
           </div>
         )}
 
-        {/* Informações adicionais */}
-        <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-          <h3 className="font-medium text-gray-800 mb-2">ℹ️ Informações importantes</h3>
-          <ul className="text-gray-600 text-sm space-y-1">
-            <li>• Apenas vídeos públicos podem ser baixados</li>
-            <li>• O download pode levar alguns minutos dependendo do tamanho do vídeo</li>
-            <li>• Vídeos são baixados na melhor qualidade disponível (até 1080p)</li>
-            <li>• Todos os vídeos são convertidos para MP4 para máxima compatibilidade</li>
-            <li>• O sistema verifica automaticamente se o vídeo está disponível</li>
-            <li>• Respeite os direitos autorais dos criadores de conteúdo</li>
-            <li>• <strong>Tecnologia:</strong> yt-dlp (sucessor do youtube-dl)</li>
-          </ul>
+        {/* Como utilizar */}
+        <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <div className="flex items-start">
+            <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
+            <div>
+              <h3 className="text-blue-900 font-medium mb-2">📥 Como baixar vídeos do YouTube</h3>
+              <ul className="text-blue-800 text-sm space-y-1">
+                <li>• <strong>Cole o Link:</strong> Copie a URL do vídeo do YouTube e cole no campo</li>
+                <li>• <strong>Verificação:</strong> O sistema verifica se o vídeo está disponível</li>
+                <li>• <strong>Escolher Pasta:</strong> Selecione onde salvar o vídeo</li>
+                <li>• <strong>Baixar:</strong> Clique em "Baixar Vídeo" e aguarde</li>
+                <li>• <strong>Qualidade:</strong> Baixa na melhor qualidade disponível (até 1080p)</li>
+                <li>• <strong>Formato:</strong> Converte automaticamente para MP4</li>
+                <li>• <strong>Uso Responsável:</strong> Respeite os direitos autorais</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

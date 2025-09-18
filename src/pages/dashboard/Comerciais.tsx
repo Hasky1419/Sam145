@@ -526,6 +526,24 @@ const Comerciais: React.FC = () => {
         </div>
       )}
     </div>
+      {/* Como utilizar Comerciais */}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="flex items-start">
+          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
+          <div>
+            <h3 className="text-blue-900 font-medium mb-2">📺 Como configurar comerciais</h3>
+            <ul className="text-blue-800 text-sm space-y-1">
+              <li>• <strong>Escolher Playlist:</strong> Selecione a playlist onde inserir comerciais</li>
+              <li>• <strong>Pasta de Comerciais:</strong> Escolha a pasta com os vídeos publicitários</li>
+              <li>• <strong>Quantidade:</strong> Defina quantos comerciais inserir por vez</li>
+              <li>• <strong>Intervalo:</strong> Configure a cada quantos vídeos inserir comerciais</li>
+              <li>• <strong>Visualizar:</strong> Use "Visualizar Comerciais" para ver os vídeos</li>
+              <li>• <strong>Ativar/Desativar:</strong> Controle quando os comerciais são exibidos</li>
+              <li>• <strong>Exemplo:</strong> 2 comerciais a cada 5 vídeos da playlist</li>
+            </ul>
+          </div>
+        </div>
+      </div>
   );
 };
 

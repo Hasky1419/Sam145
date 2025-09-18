@@ -136,48 +136,21 @@ const DadosConexao: React.FC = () => {
         </div>
       </div>
 
-      {/* URLs de Streaming SMIL */}
-      <div className="bg-white rounded-lg shadow-sm p-6 mt-6">
-        <div className="flex items-center space-x-2 mb-6">
-          <Radio className="h-6 w-6 text-green-600" />
-          <h2 className="text-xl font-semibold text-gray-800">URLs de Streaming SMIL (Playlists)</h2>
-        </div>
-
-        <div className="space-y-4">
-          {[
-            { label: 'HLS (Porta 1935)', value: fmsData.smilHlsUrl },
-            { label: 'HLS (HTTP 80)', value: fmsData.smilHlsHttpUrl },
-            { label: 'RTMP', value: fmsData.smilRtmpUrl },
-            { label: 'DASH', value: fmsData.smilDashUrl },
-            { label: 'RTSP', value: fmsData.smilRtspUrl }
-          ].map((item) => (
-            <div key={item.label}>
-              <label className="block text-sm font-medium text-gray-700 mb-2">{item.label}</label>
-              <div className="flex items-center">
-                <input
-                  type="text"
-                  readOnly
-                  value={item.value}
-                  className="flex-1 px-3 py-2 bg-gray-50 border border-gray-300 rounded-l-md font-mono text-sm"
-                />
-                <button
-                  onClick={() => copyToClipboard(item.value, `URL ${item.label}`)}
-                  className="px-3 py-2 bg-primary-600 text-white rounded-r-md hover:bg-primary-700"
-                >
-                  <Copy className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-md text-blue-800 text-sm space-y-1">
-          <p>• Prefixo obrigatório: <strong>smil:</strong> antes do nome do arquivo</p>
-          <p>• Aplicação: <strong>samhost</strong></p>
-          <p>• Arquivo SMIL: <strong>playlists_agendamentos.smil</strong></p>
-          <p>• Localização: <strong>/home/streaming/{userLogin}/playlists_agendamentos.smil</strong></p>
-          <p>• Formato correto: <strong>samhost/smil:playlists_agendamentos.smil</strong></p>
-          <p>• Portas: 1935 (RTMP/HLS), 80 (HTTP), 554 (RTSP)</p>
+      {/* Informações de Ajuda */}
+      <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+        <div className="flex items-start">
+          <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5" />
+          <div>
+            <h3 className="text-green-900 font-medium mb-2">💡 Como usar os dados de conexão</h3>
+            <ul className="text-green-800 text-sm space-y-1">
+              <li>• <strong>Dados FTP:</strong> Use para conectar softwares como FileZilla ou WinSCP</li>
+              <li>• <strong>Upload de vídeos:</strong> Envie seus arquivos diretamente para o servidor</li>
+              <li>• <strong>Organização:</strong> Crie pastas para organizar seu conteúdo</li>
+              <li>• <strong>Formatos aceitos:</strong> MP4, AVI, MOV, WMV, FLV, WebM, MKV</li>
+              <li>• <strong>Tamanho máximo:</strong> Limitado pelo espaço do seu plano</li>
+              <li>• <strong>Conversão automática:</strong> Vídeos são otimizados automaticamente</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

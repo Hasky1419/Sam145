@@ -705,66 +705,23 @@ const Players: React.FC = () => {
         </div>
       )}
 
-      {/* Informações Técnicas */}
+      {/* Como utilizar os Players */}
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-        <h3 className="text-blue-900 font-medium mb-3">📋 Comparação de Sistemas</h3>
-        
-        {/* Status das transmissões */}
-        <div className="mb-4 p-3 bg-white rounded-md">
-          <h4 className="font-medium mb-2">Status das Transmissões:</h4>
-          <div className="flex items-center space-x-4 text-sm">
-            <div className="flex items-center space-x-2">
-              <div className={`w-2 h-2 rounded-full ${playlistTransmissionActive ? 'bg-blue-500 animate-pulse' : 'bg-gray-300'}`}></div>
-              <span className={playlistTransmissionActive ? 'text-blue-600 font-medium' : 'text-gray-500'}>
-                Playlist {playlistTransmissionActive ? `"${activePlaylistName}" AO VIVO` : 'OFFLINE'}
-              </span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className={`w-2 h-2 rounded-full ${obsStreamActive ? 'bg-red-500 animate-pulse' : 'bg-gray-300'}`}></div>
-              <span className={obsStreamActive ? 'text-red-600 font-medium' : 'text-gray-500'}>
-                OBS {obsStreamActive ? 'AO VIVO' : 'OFFLINE'}
-              </span>
-            </div>
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-blue-800 text-sm">
+        <div className="flex items-start">
+          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
           <div>
-            <h4 className="font-medium mb-2">Sistema de Porta (Recomendado):</h4>
-            <ul className="space-y-1">
-              <li>• <strong>URL:</strong> samhost.wcore.com.br:3001/api/player-port/iframe</li>
-              <li>• <strong>Vantagem:</strong> Não precisa configurar subdomínio</li>
-              <li>• <strong>Deploy:</strong> Funciona automaticamente</li>
-              <li>• <strong>Autenticação:</strong> Integrada ao sistema</li>
-              <li>• <strong>Manutenção:</strong> Mais simples</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-medium mb-2">Sistema de Subdomínio (Alternativo):</h4>
-            <ul className="space-y-1">
-              <li>• <strong>URL:</strong> playerv.samhost.wcore.com.br</li>
-              <li>• <strong>Vantagem:</strong> Isolamento completo</li>
-              <li>• <strong>Deploy:</strong> Requer configuração DNS</li>
-              <li>• <strong>Recursos:</strong> Múltiplos players</li>
-              <li>• <strong>Detecção:</strong> Automática de transmissões</li>
+            <h3 className="text-blue-900 font-medium mb-2">📺 Como usar os Players</h3>
+            <ul className="text-blue-800 text-sm space-y-1">
+              <li>• <strong>Escolher Player:</strong> Selecione o tipo de player que melhor se adapta ao seu site</li>
+              <li>• <strong>Copiar Código:</strong> Use o botão "Copiar Código" para obter o código de incorporação</li>
+              <li>• <strong>Incorporar no Site:</strong> Cole o código HTML no seu site ou blog</li>
+              <li>• <strong>Testar Player:</strong> Use "Visualizar" para testar antes de incorporar</li>
+              <li>• <strong>Responsivo:</strong> Todos os players se adaptam a diferentes tamanhos de tela</li>
+              <li>• <strong>Compatibilidade:</strong> Funcionam em computadores, tablets e celulares</li>
+              <li>• <strong>Atualização Automática:</strong> O conteúdo é atualizado automaticamente</li>
             </ul>
           </div>
         </div>
-        
-        <div className="mt-4 p-3 bg-blue-100 rounded-md">
-          <p className="text-blue-900 text-sm">
-            <strong>💡 Recomendação:</strong> Use o sistema de porta para deploy mais simples. 
-            O player funciona na mesma porta do backend (3001) e não requer configuração adicional de DNS ou subdomínio.
-          </p>
-        </div>
-        
-        {(obsStreamActive || playlistTransmissionActive) && (
-          <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-md">
-            <p className="text-green-800 text-sm font-medium">
-              🎉 {playlistTransmissionActive ? `📺 Playlist "${activePlaylistName}" em transmissão!` : 'Transmissão OBS ativa!'} Os players agora mostram seu conteúdo ao vivo.
-            </p>
-          </div>
-        )}
       </div>
     </div>
   );

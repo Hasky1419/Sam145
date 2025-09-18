@@ -394,67 +394,25 @@ const Espectadores: React.FC = () => {
         </div>
       )}
 
-      {/* Estatísticas gerais */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
-          <div className="flex items-center">
-            <div className="p-3 bg-blue-100 rounded-lg">
-              <Users className="h-6 w-6 text-blue-600" />
-            </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500">Total de Espectadores</p>
-              <p className="text-2xl font-bold text-gray-900">{estatisticas.total}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
-          <div className="flex items-center">
-            <div className="p-3 bg-green-100 rounded-lg">
-              <Activity className="h-6 w-6 text-green-600" />
-            </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500">Ativos Agora</p>
-              <p className="text-2xl font-bold text-gray-900">{estatisticas.ativos}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
-          <div className="flex items-center">
-            <div className="p-3 bg-purple-100 rounded-lg">
-              <Clock className="h-6 w-6 text-purple-600" />
-            </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500">Tempo Médio</p>
-              <p className="text-2xl font-bold text-gray-900">{formatDuration(estatisticas.tempoMedio)}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
-          <div className="flex items-center">
-            <div className="p-3 bg-orange-100 rounded-lg">
-              <Globe className="h-6 w-6 text-orange-600" />
-            </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500">Países</p>
-              <p className="text-2xl font-bold text-gray-900">{Object.keys(estatisticas.paises).length}</p>
-            </div>
+      {/* Como utilizar a análise de espectadores */}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="flex items-start">
+          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
+          <div>
+            <h3 className="text-blue-900 font-medium mb-2">📊 Como analisar sua audiência</h3>
+            <ul className="text-blue-800 text-sm space-y-1">
+              <li>• <strong>Dados em Tempo Real:</strong> Veja quantos espectadores estão assistindo agora</li>
+              <li>• <strong>Mapa Mundial:</strong> Descubra de onde seus espectadores estão assistindo</li>
+              <li>• <strong>Filtros de Período:</strong> Analise dados de 1 hora até 30 dias</li>
+              <li>• <strong>Dispositivos:</strong> Saiba se assistem mais no celular ou computador</li>
+              <li>• <strong>Países e Cidades:</strong> Veja sua audiência por localização</li>
+              <li>• <strong>Tempo de Visualização:</strong> Descubra quanto tempo assistem</li>
+              <li>• <strong>Exportar Dados:</strong> Baixe relatórios em CSV para análise</li>
+              <li>• <strong>Histórico:</strong> Acompanhe o crescimento da sua audiência</li>
+            </ul>
           </div>
         </div>
       </div>
-
-      {/* Mapa mundial */}
-      <div className="bg-white rounded-lg shadow-sm p-6">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-          <MapPin className="h-5 w-5 mr-2" />
-          Distribuição Geográfica
-        </h2>
-        <div ref={mapRef} className="w-full h-96 bg-gray-100 rounded-lg flex items-center justify-center">
-          {pontosMapa.length === 0 ? (
-            <p className="text-gray-500">Nenhum dado de localização disponível</p>
-          ) : (
             <p className="text-gray-500">Carregando mapa...</p>
           )}
         </div>

@@ -1106,7 +1106,22 @@ const AppMultiplataforma: React.FC = () => {
         </div>
       )}
     </div>
-  );
-};
-
-export default AppMultiplataforma;
+      {/* Como utilizar o App Multiplataforma */}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="flex items-start">
+          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
+          <div>
+            <h3 className="text-blue-900 font-medium mb-2">📱 Como criar seu App Multiplataforma</h3>
+            <ul className="text-blue-800 text-sm space-y-1">
+              <li>• <strong>Configurar App:</strong> Preencha nome, cores e redes sociais</li>
+              <li>• <strong>Upload de Imagens:</strong> Envie logo e background personalizados</li>
+              <li>• <strong>Salvar:</strong> Clique em "Salvar Configurações" para criar o app</li>
+              <li>• <strong>Visualizar:</strong> Use a aba "Prévia" para ver como ficou</li>
+              <li>• <strong>Códigos de Instalação:</strong> Copie os códigos para Android, iOS e QR Code</li>
+              <li>• <strong>Banners:</strong> Adicione anúncios que aparecem no app</li>
+              <li>• <strong>Notificações:</strong> Envie mensagens push para usuários do app</li>
+              <li>• <strong>APK Android:</strong> Crie arquivo APK para publicar na Google Play</li>
+            </ul>
+          </div>
+        </div>
+      </div>

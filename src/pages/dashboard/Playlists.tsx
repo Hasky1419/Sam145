@@ -283,7 +283,24 @@ const Playlists: React.FC = () => {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await response.json();
-      setAvailableVideos(Array.isArray(data) ? data : []);
+      
+      // Filtrar apenas vídeos compatíveis (MP4 e dentro do limite de bitrate)
+      const compatibleVideos = Array.isArray(data) ? data.filter((video: Video) => {
+        // Verificar se é MP4
+        const isMP4 = video.is_mp4 === true || video.formato_original?.toLowerCase() === 'mp4';
+        
+        // Verificar se bitrate está dentro do limite do usuário
+        const userBitrateLimit = user?.bitrate || 2500;
+        const videoBitrate = video.bitrate_video || 0;
+        const bitrateOk = videoBitrate === 0 || videoBitrate <= userBitrateLimit;
+        
+        // Verificar status de compatibilidade
+        const isCompatible = video.compativel === 'sim' || video.compativel === 'otimizado';
+        
+        return isMP4 && bitrateOk && isCompatible;
+      }) : [];
+      
+      setAvailableVideos(compatibleVideos);
     } catch (error) {
       console.error('Erro ao carregar vídeos disponíveis:', error);
       setAvailableVideos([]);
@@ -888,7 +905,7 @@ const Playlists: React.FC = () => {
             <div className="max-h-96 overflow-y-auto space-y-2">
               {availableVideos.length === 0 ? (
                 <p className="text-gray-500 text-center py-8">
-                  {selectedFolder ? 'Nenhum vídeo encontrado nesta pasta' : 'Selecione uma pasta'}
+                  {selectedFolder ? 'Nenhum vídeo compatível encontrado nesta pasta' : 'Selecione uma pasta'}
                 </p>
               ) : (
                 availableVideos.map((video) => (
@@ -1168,22 +1185,36 @@ const Playlists: React.FC = () => {
         </div>
       )}
 
-      {/* Informações de Ajuda */}
+      {/* Como utilizar Playlists */}
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
         <div className="flex items-start">
           <AlertCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
           <div>
-            <h3 className="text-blue-900 font-medium mb-2">📺 Como usar a Transmissão de Playlist</h3>
+            <h3 className="text-blue-900 font-medium mb-2">📺 Como criar e usar Playlists</h3>
             <ul className="text-blue-800 text-sm space-y-1">
-              <li>• <strong>Criar Playlist:</strong> Adicione vídeos arrastando da lista de vídeos disponíveis</li>
-              <li>• <strong>Organizar:</strong> Arraste os vídeos para reordenar a sequência de reprodução</li>
-              <li>• <strong>Salvar:</strong> Sempre salve a playlist antes de iniciar a transmissão</li>
-              <li>• <strong>Transmitir:</strong> Clique em "Transmitir Playlist" para iniciar a transmissão ao vivo</li>
-              <li>• <strong>URL de Transmissão:</strong> https://stmv1.udicast.com:1935/{userLogin}/{userLogin}/playlist.m3u8</li>
-              <li>• <strong>Monitoramento:</strong> Acompanhe espectadores, bitrate e tempo ativo em tempo real</li>
-              <li>• <strong>Loop Automático:</strong> A playlist será repetida automaticamente quando terminar</li>
-              <li>• <strong>Agendamento:</strong> Use o botão "Agendar" para programar transmissões futuras</li>
+              <li>• <strong>Criar Playlist:</strong> Clique em "Nova Playlist" e dê um nome</li>
+              <li>• <strong>Adicionar Vídeos:</strong> Selecione uma pasta e clique no "+" ao lado dos vídeos</li>
+              <li>• <strong>Organizar:</strong> Arraste os vídeos para mudar a ordem de reprodução</li>
+              <li>• <strong>Vídeos Compatíveis:</strong> Apenas vídeos MP4 otimizados aparecem na lista</li>
+              <li>• <strong>Salvar:</strong> Sempre salve a playlist antes de transmitir</li>
+              <li>• <strong>Transmitir:</strong> Use "Transmitir Playlist" para ir ao vivo</li>
+              <li>• <strong>Agendar:</strong> Programe transmissões futuras com o botão "Agendar"</li>
+              <li>• <strong>Monitorar:</strong> Acompanhe espectadores e estatísticas em tempo real</li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Aviso sobre vídeos compatíveis */}
+      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+        <div className="flex items-start">
+          <AlertCircle className="h-5 w-5 text-yellow-600 mr-3 mt-0.5" />
+          <div>
+            <h3 className="text-yellow-900 font-medium mb-2">⚠️ Vídeos Compatíveis</h3>
+            <p className="text-yellow-800 text-sm">
+              Apenas vídeos <strong>MP4 otimizados</strong> e com <strong>bitrate dentro do seu plano</strong> podem ser adicionados às playlists. 
+              Se um vídeo não aparece na lista, verifique se ele foi convertido corretamente na seção "Conversão de Vídeos".
+            </p>
           </div>
         </div>
       </div>

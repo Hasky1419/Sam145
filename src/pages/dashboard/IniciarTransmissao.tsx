@@ -630,64 +630,24 @@ const IniciarTransmissao: React.FC = () => {
         </form>
       </div>
 
-      {/* Informações Técnicas */}
+      {/* Como utilizar Lives */}
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-        <h3 className="text-blue-900 font-medium mb-3">📋 Informações Técnicas</h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-blue-800 text-sm">
+        <div className="flex items-start">
+          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
           <div>
-            <h4 className="font-medium mb-2">URLs de Fonte (Source):</h4>
-            <ul className="space-y-1">
-              {sourceUrls && (
-                <>
-                  <li>• <strong>HTTP/M3U8:</strong> {sourceUrls.http_m3u8}</li>
-                  <li>• <strong>RTMP:</strong> {sourceUrls.rtmp}</li>
-                </>
-              )}
+            <h3 className="text-blue-900 font-medium mb-2">📡 Como fazer transmissões ao vivo</h3>
+            <ul className="text-blue-800 text-sm space-y-1">
+              <li>• <strong>Escolher Plataforma:</strong> Selecione YouTube, Facebook, Twitch ou outra</li>
+              <li>• <strong>Obter Stream Key:</strong> Copie a chave de transmissão da plataforma escolhida</li>
+              <li>• <strong>Configurar Horário:</strong> Defina quando a transmissão deve terminar</li>
+              <li>• <strong>Início Imediato:</strong> Marque para começar agora mesmo</li>
+              <li>• <strong>Monitorar:</strong> Acompanhe o status na lista de transmissões</li>
+              <li>• <strong>Finalizar:</strong> Use o botão "Finalizar" quando quiser parar</li>
+              <li>• <strong>Múltiplas Plataformas:</strong> Pode transmitir para várias ao mesmo tempo</li>
             </ul>
           </div>
-          
-          <div>
-            <h4 className="font-medium mb-2">Como Funciona:</h4>
-            <ul className="space-y-1">
-              <li>• Sistema usa FFmpeg via SSH para fazer relay</li>
-              <li>• Screen sessions mantêm processos em background</li>
-              <li>• Configurações especiais para TikTok/Kwai (crop 9:16)</li>
-              <li>• Facebook usa RTMPS na porta 443</li>
-              <li>• Domínio fixo: <strong>stmv1.udicast.com</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-4 p-3 bg-blue-100 rounded-md">
-          <p className="text-blue-900 text-sm">
-            <strong>🔧 Processo Técnico:</strong> O sistema captura sua transmissão do Wowza 
-            (fonte) e retransmite para as plataformas selecionadas usando FFmpeg. 
-            Cada transmissão roda em uma screen session separada no servidor.
-          </p>
         </div>
       </div>
-
-      {/* Debug - URLs de Fonte */}
-      {sourceUrls && (
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-          <h3 className="text-gray-800 font-medium mb-2">🔧 Debug - URLs de Fonte</h3>
-          <div className="space-y-2 text-sm">
-            <div>
-              <span className="font-medium">HTTP/M3U8:</span>
-              <code className="ml-2 bg-gray-200 px-2 py-1 rounded text-xs">{sourceUrls.http_m3u8}</code>
-            </div>
-            <div>
-              <span className="font-medium">RTMP:</span>
-              <code className="ml-2 bg-gray-200 px-2 py-1 rounded text-xs">{sourceUrls.rtmp}</code>
-            </div>
-            <div>
-              <span className="font-medium">Usuário:</span>
-              <code className="ml-2 bg-gray-200 px-2 py-1 rounded text-xs">{userLogin}</code>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

@@ -312,6 +312,25 @@ const ConversaoVideos: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Como utilizar a conversão */}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="flex items-start">
+          <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
+          <div>
+            <h3 className="text-blue-900 font-medium mb-2">🔄 Como converter seus vídeos</h3>
+            <ul className="text-blue-800 text-sm space-y-1">
+              <li>• <strong>Selecionar Pasta:</strong> Escolha a pasta com os vídeos para converter</li>
+              <li>• <strong>Verificar Status:</strong> Vídeos "Otimizados" já estão prontos para uso</li>
+              <li>• <strong>Converter:</strong> Clique em "Converter" nos vídeos que precisam</li>
+              <li>• <strong>Escolher Qualidade:</strong> Selecione a qualidade baseada no seu plano</li>
+              <li>• <strong>Aguardar:</strong> A conversão pode levar alguns minutos</li>
+              <li>• <strong>Usar em Playlists:</strong> Após converter, o vídeo pode ser usado em playlists</li>
+              <li>• <strong>Economia de Espaço:</strong> Vídeos otimizados ocupam menos espaço</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
